@@ -1,0 +1,15 @@
+{
+  "name": "linq-equivalent",
+  "version": "1.0.0",
+  "description": "Simple array extension functions to do linq operations like C#",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "javascript",
+    "linq"
+  ],
+  "author": "Fauzan Azhiman",
+  "license": "ISC"
+}
