@@ -117,18 +117,18 @@ test12ok =  !test12ok ? false :tests.LastOrDefault(i => i.Gender == "transgender
 console.log(test12ok ? "OK!" : "TEST FAILED!");
 
 var Fruits_1 = [
-	{Id: 1, Name: "Orange"},
-	{Id: 2, Name: "Apple"},
-	{Id: 3, Name: "Avocado"},
-	{Id: 4, Name: "Snakefruit"},
-	{Id: 4, Name: "Snakefruit"},
+	{Id: 1, Name: "Orange", Qty: 6},
+	{Id: 2, Name: "Apple", Qty: 1},
+	{Id: 3, Name: "Avocado", Qty: 13},
+	{Id: 4, Name: "Snakefruit", Qty: 45},
+	{Id: 4, Name: "Snakefruit", Qty: 23},
 ];
 
 var Fruits_2 = [
-	{Id: 3, Name: "Avocado"},
-	{Id: 4, Name: "Snakefruit"},
-	{Id: 5, Name: "Strawberry"},
-	{Id: 6, Name: "Grape"},	
+	{Id: 3, Name: "Avocado", Qty: 4},
+	{Id: 4, Name: "Snakefruit", Qty: 5},
+	{Id: 5, Name: "Strawberry", Qty: 23},
+	{Id: 6, Name: "Grape", Qty: 120},	
 ];
 
 console.log("Testing Distinct...");
@@ -154,3 +154,17 @@ var FruitExcept = Fruits_1.Except(Fruits_2, (i,j) => i.Id == j.Id);
 //FruitExcept.Select(i => console.log(i.Name));
 var test16ok = FruitExcept[0].Name == "Orange" && FruitExcept[1].Name == "Apple";
 console.log(test16ok ? "OK!" : "TEST FAILED!");
+
+console.log("Testing Zip...");
+var arr1 = [1, 2, 3, 4, 5]; 
+var arr2 = ["Akbar", "Bandung", "Cantik", "Dodol", "Ember"];
+var zipped = arr1.Zip(arr2, (a, b) => ({Number:a, Word:b}));  
+//zipped.Select(i => console.log(i.Number + " " + i.Word)); 
+var test17ok = zipped[1].Number == 2 && zipped[1].Word == "Bandung";
+console.log(test17ok ? "OK!" : "TEST FAILED!");
+
+console.log("Testing RemoveAll...");
+var RemoveSnakefruit = Fruits_1.RemoveAll(i => i.Name == "Snakefruit");
+//Fruits_1.Select(i => console.log(i.Name)); 
+var test18ok = Fruits_1.Count() == 3;
+console.log(test18ok ? "OK!" : "TEST FAILED!");

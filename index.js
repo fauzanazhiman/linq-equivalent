@@ -168,14 +168,28 @@ Array.prototype.Except = function (arr, comparer) {
 
 Array.prototype.Zip = function (arr, selector) {
     return this
-        .take(Math.min(this.length, arr.length))
-        .select(function (t, i) {
+        .Take(Math.min(this.length, arr.length))
+        .Select(function (t, i) {
             return selector(t, arr[i]);
     });
 };  
 
+Array.prototype.IndexOf = Array.prototype.indexOf || function (o, index) {
+    var l = this.length;
+    for (var i = Math.max(Math.min(index, l), 0) || 0; i < l; i++)
+        if (this[i] === o) return i;
+    return -1;
+};  
+
+Array.prototype.LastIndexOf = Array.prototype.lastIndexOf || function (o, index) {
+    var l = Math.max(Math.min(index || this.length, this.length), 0);
+    while (l-- > 0)
+        if (this[l] === o) return l;
+    return -1;
+}; 
+
 Array.prototype.Remove = function (item) {
-    var i = this.indexOf(item);
+    var i = this.IndexOf(item);
     if (i != -1)
         this.splice(i, 1);
 }; 
@@ -183,9 +197,9 @@ Array.prototype.Remove = function (item) {
 Array.prototype.RemoveAll = function (predicate) {
     var item;
     var i = 0;
-    while (item = this.first(predicate)) {
+    while (item = this.FirstOrDefault(predicate)) {
         i++;
-        this.remove(item);
+        this.Remove(item);
     }
     return i;
 }; 
