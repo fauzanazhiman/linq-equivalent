@@ -7,7 +7,7 @@ Just simple array extension functions to do LINQ operations like C# in Javascrip
 
 Standalone/minified js version haven't been provided yet. Will add when I get another free time :D
 
-## Examples:
+## Examples (using ES6):
 
 ```
 require("linq-equivalent")
