@@ -10,6 +10,9 @@ Standalone/minified js version haven't been provided yet. Will add when I get an
 ## Examples:
 
 ```
+require("linq-equivalent")
+//....
+//....
 var tests = [
 	{Id: "13410001", Name: "Marni", GPA: 3.45, Gender: "male"},
 	{Id: "13410002", Name: "Dodo", GPA: 3.95, Gender: "female"},
@@ -25,6 +28,11 @@ var tests = [
 ];
 
 var high_performance_students = tests.Where(x => x.GPA > 3.25).Select(x => x.Name);
+high_performance_students.Select(x => console.log(x));
+
+var five_best_students = tests.OrderByDescending(x => x.GPA).Take(5);
+five_best_students.Select(x => console.log(x.Name));
+//.....
 ```
 
 ## How to contribute/test:
