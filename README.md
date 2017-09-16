@@ -5,7 +5,7 @@ Just simple array extension functions to do LINQ operations like C# in Javascrip
 1. Run `npm install linq-equivalent`
 2. Add `require("linq-equivalent");`
 
-Standalone/minified js file haven't been provided yet. Will add when I get another free time :D
+Standalone/minified js version haven't been provided yet. Will add when I get another free time :D
 
 ## How to contribute/test:
 1. Clone this project: https://github.com/fauzanazhiman/linq-equivalent.git
