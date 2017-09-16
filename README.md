@@ -2,7 +2,7 @@
 Just simple array extension functions to do LINQ operations like C# in Javascript.
 
 ## How to use in node js project:
-1. Run `npm install linq-equivalent`
+1. Run `npm install linq-equivalent --save`
 2. Add `require("linq-equivalent");`
 
 Standalone/minified js version haven't been provided yet. Will add when I get another free time :D
