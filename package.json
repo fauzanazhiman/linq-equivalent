@@ -11,5 +11,10 @@
     "linq"
   ],
   "author": "Fauzan Azhiman",
-  "license": "ISC"
+  "license": "UNLICENSED",
+  "repository" :
+  { 
+	"type" : "git", 
+	"url" : "https://github.com/fauzanazhiman/linq-equivalent.git"
+  }
 }
