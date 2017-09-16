@@ -10,9 +10,8 @@ Standalone/minified js version haven't been provided yet. Will add when I get an
 ## Examples (using ES6):
 
 ```
-require("linq-equivalent")
-//....
-//....
+require("linq-equivalent");
+
 var tests = [
 	{Id: "13410001", Name: "Marni", GPA: 3.45, Gender: "male"},
 	{Id: "13410002", Name: "Dodo", GPA: 3.95, Gender: "female"},
@@ -32,8 +31,18 @@ high_performance_students.Select(x => console.log(x));
 
 var five_best_students = tests.OrderByDescending(x => x.GPA).Take(5);
 five_best_students.Select(x => console.log(x.Name));
-//.....
 ```
+## Examples (without ES6):
+
+```
+...
+var high_performance_students = tests.Where(function(x){return x.GPA > 3.25;}).Select(function(x){return x.Name;});
+high_performance_students.Select(function(x){console.log(x);}));
+
+var five_best_students = tests.OrderByDescending(function(x){return x.GPA;}).Take(5);
+five_best_students.Select(function(x){console.log(x.Name);}));
+```
+
 
 ## How to contribute/test:
 1. Clone this project: https://github.com/fauzanazhiman/linq-equivalent.git
