@@ -1,11 +1,15 @@
 # linq-equivalent
 Just simple array extension functions to do LINQ operations like C# in Javascript.
 
-## How to use in node js project:
-1. Run `npm install linq-equivalent --save`
-2. Add `require("linq-equivalent");`
+## Getting Started:
+You can install this as node package or just use it directly on html
 
-Standalone/minified js version haven't been provided yet. Will add when I get another free time :D
+### Install as node package
+1. Run `npm install linq-equivalent --save`
+2. Add `require("linq-equivalent");` on the beginning of your scripts.
+
+### Or, include the script on your HTML
+`<script src="linq-equivalent.min.js"></script> `
 
 ## Examples (using ES6):
 
@@ -26,27 +30,26 @@ var tests = [
 	{Id: "13410011", Name: "Paulina", GPA: 3.52, Gender: "male"}
 ];
 
-var high_performance_students = tests.Where(x => x.GPA > 3.25).Select(x => x.Name);
-high_performance_students.Select(x => console.log(x));
+var high_performance_students = tests.Where(x => x.GPA > 3.25).Select(x => x.Name).Select(x => console.log(x));
 
-var five_best_students = tests.OrderByDescending(x => x.GPA).Take(5);
-five_best_students.Select(x => console.log(x.Name));
+var five_best_students = tests.OrderByDescending(x => x.GPA).Take(5).Select(x => console.log(x.Name));
 ```
+
 ## Examples (without ES6):
 
 ```
 ...
-var high_performance_students = tests.Where(function(x){return x.GPA > 3.25;}).Select(function(x){return x.Name;});
-high_performance_students.Select(function(x){console.log(x);}));
+var high_performance_students = tests.Where(function(x){return x.GPA > 3.25;}).Select(function(x){return x.Name;}).Select(function(x){console.log(x);}));
 
-var five_best_students = tests.OrderByDescending(function(x){return x.GPA;}).Take(5);
-five_best_students.Select(function(x){console.log(x.Name);}));
+var five_best_students = tests.OrderByDescending(function(x){return x.GPA;}).Take(5).Select(function(x){console.log(x.Name);}));
 ```
 
 
 ## How to contribute/test:
-1. Clone this project: https://github.com/fauzanazhiman/linq-equivalent.git
-2. Make a new branch
-3. Edit index.js as you wish, you can also add test cases on test.js
-4. Run `npm test` or `node test.js` to do unit testing.
-5. Make a pull request :D
+1. Clone this project: `git clone https://github.com/fauzanazhiman/linq-equivalent.git`
+2. `npm install`
+3. Make a new branch
+4. Edit index.js as you wish, you can also add test cases on test.js
+5. Run `npm test` or `node test.js` to do unit testing.
+6. Run `node minify.js` if you want to create minified standalone js file of the script.
+6. Make a pull request :D
