@@ -12,9 +12,11 @@
   ],
   "author": "Fauzan Azhiman",
   "license": "UNLICENSED",
-  "repository" :
-  { 
-	"type" : "git", 
-	"url" : "https://github.com/fauzanazhiman/linq-equivalent.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fauzanazhiman/linq-equivalent.git"
+  },
+  "devDependencies": {
+    "node-minify": "^2.3.0"
   }
 }
